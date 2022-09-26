@@ -8,6 +8,7 @@ class MainMenu(QWidget):
         self.setWindowTitle("All Convertor")
         self.setWindowIcon(QIcon())
         self.setFixedSize(500, 300)
+        self.setWindowIcon(QIcon(r'AllConvetor\images\convert.png'))
         self.lenght()
         self.temperature()
         self.area()
@@ -82,17 +83,8 @@ class MainMenu(QWidget):
         self.time_button.show()
         self.time_icon.show()
         
-background = """ 
-MainMenu
-{
-background-image: url("https://www.homeindeed.net/hubfs/How%20To%20Measure%20Your%20Space.png");
-background-repeat: no-repeat;
-background-position: center;
-}
-"""
 if __name__ == "__main__":            
     app = QApplication(sys.argv)
-    app.setStyleSheet(background)
     win = MainMenu()
     win.show()
     app.exec_()
