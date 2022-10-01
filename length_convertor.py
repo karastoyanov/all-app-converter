@@ -22,7 +22,7 @@ def calculate(left, right, value):
         elif r == 'Foot':
             result = v * 3.280839895
         elif r == 'Inch':
-            result == v * 39.37007874
+            result = v * 39.37007874
         elif r == 'Light Year':
             result = v * 1.057008707E-16
     elif l == 'Kilometer':
@@ -51,7 +51,7 @@ def calculate(left, right, value):
     elif l == 'Centimeter':
         if r == 'Meter':
             result = v * 0.01
-        elif r == 'Kilomter':
+        elif r == 'Kilometer':
             result = v * 0.00001
         elif r == 'Centimeter':
             result = v * 1
@@ -68,7 +68,7 @@ def calculate(left, right, value):
         elif r == 'Foot':
             result = v * 0.032808399
         elif r == 'Inch':
-            result == v * 0.3937007874
+            result = v * 0.3937007874
         elif r == 'Light Year':
             result = v * 1.057008707E-18
     elif l == 'Millimeter':

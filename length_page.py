@@ -51,7 +51,7 @@ class LengthMenu(QWidget):
     def convert(self):
         self.l = self.left_side.currentText()
         self.r = self.right_side.currentText()
-        self.v =self.value.displayText()
+        self.v = self.value.displayText()
         from length_convertor import calculate
         self.right_side_text.setText(str(calculate(self.l, self.r, self.v)))
         self.right_side_text.show()  

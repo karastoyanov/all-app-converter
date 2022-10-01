@@ -2,26 +2,41 @@ from PyQt5.QtWidgets import (QApplication, QWidget, QPushButton, QLabel, QLineEd
 from PyQt5.QtGui import (QIcon, QPixmap, QValidator, QIntValidator)
 import sys
 
-max_size = sys.maxsize
-min_size = -sys.maxsize - 1
-
-class TempMenu(QWidget):
+class AreaMenu(QWidget):
     def __init__(self):
         super().__init__()
-        self.setWindowTitle("All Convertor - Temperature")
+        self.setWindowTitle("All Convertor - Area")
         self.setFixedSize(480, 300)
-        self.setWindowIcon(QIcon(r'images\thermometer.png'))
+        self.setWindowIcon(QIcon(r'images\area-graph.png'))
         self.show()
 
-         # Left DropDown Menu
+        # Left DropDown Menu
         self.left_side = QComboBox(self)
-        self.left_side.addItems(['Celsius', 'Kelvin', 'Fahrenheit'])
+        self.left_side.addItems(['Square Meter',
+                                 'Square Kilometer',
+                                 'Square Millimeter',
+                                 'Square Micrometer',
+                                 'Hectare',
+                                 'Square Mile',
+                                 'Square Yard',
+                                 'Square Foot',
+                                 'Square Inch',
+                                 'Acre'])
         self.left_side.setGeometry(50, 50, 130, 30)
         self.left_side.show()
 
         # Right DropDown Menu
         self.right_side = QComboBox(self)
-        self.right_side.addItems(['Celsius', 'Kelvin', 'Fahrenheit'])
+        self.right_side.addItems(['Square Meter',
+                                 'Square Kilometer',
+                                 'Square Millimeter',
+                                 'Square Micrometer',
+                                 'Hectare',
+                                 'Square Mile',
+                                 'Square Yard',
+                                 'Square Foot',
+                                 'Square Inch',
+                                 'Acre'])
         self.right_side.setGeometry(300, 50, 130, 30)
         self.right_side.show()
 
@@ -31,13 +46,13 @@ class TempMenu(QWidget):
         self.value.setValidator(self.validator)
         self.value.setGeometry(50, 85, 130, 30)
         self.value.show()
-
+        
         # Right Result Value
         self.right_side_text = QLineEdit(self)
         self.right_side_text.setReadOnly(True)
         self.right_side_text.setGeometry(300, 85, 130, 30)
         self.right_side_text.show()
-        
+
         # Convert Button
         self.convert_button = QPushButton(self)
         self.convert_button.clicked.connect(self.convert)
@@ -49,12 +64,13 @@ class TempMenu(QWidget):
         self.l = self.left_side.currentText()
         self.r = self.right_side.currentText()
         self.v = self.value.displayText()
-        from temperature_convertor import calculate
+        from area_convertor import calculate
         self.right_side_text.setText(str(calculate(self.l, self.r, self.v)))
-        self.right_side_text.show()
+        self.right_side_text.show()  
+
 
 if __name__ == "__main__":            
     app = QApplication(sys.argv)
-    win = TempMenu()
+    win = AreaMenu()
     win.show()
     app.exec_()
