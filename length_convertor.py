@@ -1,7 +1,7 @@
 def calculate(left, right, value):
     l = left
     r = right
-    v = int(value)
+    v = float(value)
     if l == 'Meter':
         if r == 'Meter':
             result = v * 1
@@ -256,5 +256,5 @@ def calculate(left, right, value):
         elif r == 'Light Year':
             result = v * 1
        
-    return result
+    return f'{result:.3f}'
 

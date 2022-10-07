@@ -1,5 +1,5 @@
 from PyQt5.QtWidgets import (QApplication, QWidget, QPushButton, QLabel, QLineEdit, QMessageBox, QPlainTextEdit, QComboBox)
-from PyQt5.QtGui import (QIcon, QPixmap, QValidator, QIntValidator)
+from PyQt5.QtGui import (QIcon, QPixmap, QValidator, QIntValidator, QDoubleValidator)
 import sys
 
 class AreaMenu(QWidget):
@@ -41,7 +41,7 @@ class AreaMenu(QWidget):
         self.right_side.show()
 
         # Left Input Value
-        self.validator = QIntValidator(-2147483646, 2147483647)
+        self.validator = QDoubleValidator(-2147483646, 2147483647, 10)
         self.value = QLineEdit(self)
         self.value.setValidator(self.validator)
         self.value.setGeometry(50, 85, 130, 30)

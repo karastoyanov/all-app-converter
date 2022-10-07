@@ -1,7 +1,7 @@
 def calculate(left, right, value):
     l = left
     r = right
-    v = int(value)
+    v = float(value)
     if l == 'Celsius':
         if r == 'Celsius':
             result = v * 1
@@ -24,4 +24,4 @@ def calculate(left, right, value):
         elif r == 'Fahrenheit':
             result = v * 1
             
-    return result
+    return f'{result:.3f}'
