@@ -9,26 +9,20 @@ class MainMenu(QWidget):
         self.setWindowIcon(QIcon())
         self.setFixedSize(500, 300)
         self.setWindowIcon(QIcon(r'images\convert.png'))
-        self.lenght()
-        self.temperature()
-        self.area()
-        self.volume()
-        self.weight()
-        self.time()
         self.show()
 
-    def lenght(self):
-        self.lenght_button = QPushButton(self)
-        self.lenght_button.setText("Length")
-        self.lenght_button.setGeometry(30, 10, 90, 40)
+        # Length button and icon
+        self.length_button = QPushButton(self)
+        self.length_button.setText("Length")
+        self.length_button.setGeometry(30, 10, 90, 40)
         self.ruler_icon = QLabel(self)
         self.ruler_icon.setGeometry(130, 15, 90, 40)
         self.ruler = QPixmap(r'images/ruler.png')
         self.ruler_icon.setPixmap(self.ruler)
-        self.lenght_button.show()
+        self.length_button.show()
         self.ruler_icon.show()
     
-    def temperature(self):
+        # Temperature button and icon
         self.temperature_button = QPushButton(self)
         self.temperature_button.setText("Temperature")
         self.temperature_button.setGeometry(30, 70, 90, 40)
@@ -39,7 +33,7 @@ class MainMenu(QWidget):
         self.temperature_button.show()
         self.temp_icon.show()
 
-    def area(self):
+        # Area button and icon
         self.area_button = QPushButton(self)
         self.area_button.setText("Area")
         self.area_button.setGeometry(30, 130, 90, 40)
@@ -50,7 +44,7 @@ class MainMenu(QWidget):
         self.area_button.show()
         self.area_icon.show()
     
-    def volume(self):
+        # Volume button and icon
         self.volume_button = QPushButton(self)
         self.volume_button.setText("Volume")
         self.volume_button.setGeometry(300, 10, 90, 40)
@@ -61,7 +55,7 @@ class MainMenu(QWidget):
         self.volume_button.show()
         self.volume_icon.show()
     
-    def weight(self):
+        # Weight button and icon
         self.weight_button = QPushButton(self)
         self.weight_button.setText("Weight")
         self.weight_button.setGeometry(300, 70, 90, 40)
@@ -72,7 +66,7 @@ class MainMenu(QWidget):
         self.weight_button.show()
         self.weight_icon.show()
     
-    def time(self):
+
         self.time_button = QPushButton(self)
         self.time_button.setText("Time")
         self.time_button.setGeometry(300, 130, 90, 40)
