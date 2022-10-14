@@ -1,6 +1,7 @@
 from PyQt5.QtWidgets import (QApplication, QWidget, QPushButton, QLabel, QLineEdit, QMessageBox, QPlainTextEdit)
 from PyQt5.QtGui import (QIcon, QPixmap)
-import sys
+import sys, os
+import length_page
 
 class MainMenu(QWidget):
     def __init__(self):
@@ -13,6 +14,7 @@ class MainMenu(QWidget):
 
         # Length button and icon
         self.length_button = QPushButton(self)
+        self.length_button = QPushButton(self, clicked = lambda : self.open_length())
         self.length_button.setText("Length")
         self.length_button.setGeometry(30, 10, 90, 40)
         self.ruler_icon = QLabel(self)
@@ -77,9 +79,17 @@ class MainMenu(QWidget):
         self.time_button.show()
         self.time_icon.show()
         
+    def open_length(self):
+        win2 = length_page.LengthMenu()
+        win2.show()
+        win.hide()
+        
+        
+        
 if __name__ == "__main__":            
     app = QApplication(sys.argv)
     win = MainMenu()
     win.show()
     app.exec_()
-        
+
+application_path = os.path.dirname(sys.executable)

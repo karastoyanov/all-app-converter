@@ -1,7 +1,7 @@
 def calculate(left, right, value):
     l = left
     r = right
-    v = int(value)
+    v = float(value)
     if l == 'Square Meter':
         if r == 'Square Meter':
             result = v * 1
@@ -256,4 +256,4 @@ def calculate(left, right, value):
         elif r == 'Acre':
             result = v 
     
-    return result
+    return f'{result:.3f}'
