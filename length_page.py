@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 from PyQt5.QtWidgets import (QApplication, QWidget, QPushButton, QLabel, QLineEdit, QMessageBox, QPlainTextEdit, QComboBox)
 from PyQt5.QtGui import (QIcon, QPixmap, QValidator, QDoubleValidator)
 import sys
